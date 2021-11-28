@@ -1,0 +1,85 @@
+/*
+  * Functions
+  */
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+/*  * import fonts  */
+
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
+
+/*
+   * Mixins
+   */
+@mixin _headline-base() {
+  font-family: "New Rocker", cursive;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin headline1() {
+  @include _headline-base;
+  font-size: toRem(96px);
+}
+
+@mixin headline() {
+  @include _headline-base;
+  font-size: toRem(60px);
+}
+
+@mixin headline3() {
+  @include _headline-base;
+  font-size: toRem(48px);
+}
+
+@mixin headline4() {
+  @include _headline-base;
+  font-size: toRem(34px);
+}
+
+@mixin headline5() {
+  @include _headline-base;
+  font-size: toRem(24px);
+}
+
+@mixin headline6() {
+  @include _headline-base;
+  font-size: toRem(20px);
+}
+
+@mixin body1() {
+  @include _headline-base;
+  font-size: toRem(16px);
+}
+
+@mixin body2() {
+  @include _headline-base;
+  font-size: toRem(14px);
+}
+
+@mixin subtitle1() {
+  @include _headline-base;
+  font-size: toRem(16px);
+}
+
+@mixin subtitle2() {
+  @include _headline-base;
+  font-size: toRem(14px);
+}
+
+@mixin button() {
+  @include _headline-base;
+  font-size: toRem(14px);
+}
+
+@mixin overline() {
+  @include _headline-base;
+  font-size: toRem(10px);
+}
+
+@mixin caption() {
+  @include _headline-base;
+  font-size: toRem(12px);
+}
