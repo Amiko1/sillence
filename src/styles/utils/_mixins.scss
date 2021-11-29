@@ -13,6 +13,10 @@
 /*
    * Mixins
    */
+
+.color {
+  color: red;
+}
 @mixin _headline-base() {
   font-family: "New Rocker", cursive;
   font-style: normal;

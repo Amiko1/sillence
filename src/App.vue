@@ -7,5 +7,5 @@
 </template>
 
 <style lang="scss">
-@import "./styles/main.scss";
+// @import "./styles/utils/mixins.scss";
 </style>
