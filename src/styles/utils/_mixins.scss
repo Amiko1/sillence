@@ -20,70 +20,71 @@
 @mixin _headline-base() {
   font-family: "New Rocker", cursive;
   font-style: normal;
+  letter-spacing: 2px;
   font-weight: 400;
 }
 
 @mixin headline1() {
   @include _headline-base;
-  font-size: toRem(96px);
+  font-size: toRem(96);
 }
 
 @mixin headline() {
   @include _headline-base;
-  font-size: toRem(60px);
+  font-size: toRem(60);
 }
 
 @mixin headline3() {
   @include _headline-base;
-  font-size: toRem(48px);
+  font-size: toRem(48);
 }
 
 @mixin headline4() {
   @include _headline-base;
-  font-size: toRem(34px);
+  font-size: toRem(34);
 }
 
 @mixin headline5() {
   @include _headline-base;
-  font-size: toRem(24px);
+  font-size: toRem(24);
 }
 
 @mixin headline6() {
   @include _headline-base;
-  font-size: toRem(20px);
+  font-size: toRem(20);
 }
 
 @mixin body1() {
   @include _headline-base;
-  font-size: toRem(16px);
+  font-size: toRem(16);
 }
 
 @mixin body2() {
   @include _headline-base;
-  font-size: toRem(14px);
+  font-size: toRem(14);
 }
 
 @mixin subtitle1() {
   @include _headline-base;
-  font-size: toRem(16px);
+  font-size: toRem(16);
 }
 
 @mixin subtitle2() {
   @include _headline-base;
-  font-size: toRem(14px);
+  font-size: toRem(14);
 }
 
 @mixin button() {
   @include _headline-base;
-  font-size: toRem(14px);
+  font-size: toRem(14);
 }
 
 @mixin overline() {
   @include _headline-base;
-  font-size: toRem(10px);
+  font-size: toRem(10);
 }
 
 @mixin caption() {
   @include _headline-base;
-  font-size: toRem(12px);
+  font-size: toRem(12);
 }
