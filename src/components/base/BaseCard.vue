@@ -14,9 +14,11 @@
 <style scoped lang="scss">
 .card {
   width: 100%;
+
   main {
     overflow: hidden;
     cursor: pointer;
+    max-height: 500px;
   }
   footer {
     padding: toRem(15) toRem(10);
@@ -24,6 +26,7 @@
     background-color: $black;
     opacity: 0.7;
     color: $white;
+    max-height: 300px;
   }
   &:hover {
     img {

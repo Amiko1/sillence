@@ -2,6 +2,9 @@
   display: flex;
   gap: var(--gap, 1rem);
 }
+.justify-between {
+  justify-content: space-between;
+}
 
 .grid {
   display: grid;
@@ -11,7 +14,8 @@
 .container {
   padding-inline: 2em;
   margin-inline: auto;
-  max-width: 60rem;
+  max-width: 150rem;
+  width: 85%;
 }
 
 .sr-only {
@@ -34,4 +38,36 @@
 .flow > *:not(:last-child) {
   margin-bottom: 1rem;
   outline: 1px solid red;
+}
+
+.mt-sm {
+  margin-top: 5px;
+}
+
+.mt-md {
+  margin-top: 15px;
+}
+
+.mt-lg {
+  margin-top: 25px;
+}
+
+.text-md {
+  font-size: 14px !important;
+}
+
+.text-sm {
+  font-size: 10px !important;
+}
+
+.ml-sm {
+  margin-left: 12px;
+}
+
+.padding {
+  padding: 2rem;
+}
+
+.icon {
+  cursor: pointer;
 }

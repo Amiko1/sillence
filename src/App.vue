@@ -1,6 +1,8 @@
 <template>
   <TheNavigation />
-  <router-view />
+  <div class="container">
+    <router-view />
+  </div>
 </template>
 
 

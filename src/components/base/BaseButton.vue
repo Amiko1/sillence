@@ -15,9 +15,9 @@
   border: 1px solid transparent;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
+  background-position: 0 -100% !important;
   &:hover {
-    background-position: 0 -33%;
+    background-position: 0 -33% !important;
   }
   &__neon {
     text-align: center;

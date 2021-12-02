@@ -46,6 +46,7 @@ export default defineComponent({
   z-index: 30;
 }
 .navigation {
+  z-index: 20;
   padding-top: toRem(70);
   &__list {
     display: flex;
@@ -82,9 +83,11 @@ export default defineComponent({
     height: 100vh;
     top: 0;
     width: 100%;
+    overflow-y: auto;
 
     &__list {
-      height: 100%;
+      min-height: 100%;
+
       align-items: center;
       flex-direction: column;
     }
@@ -97,6 +100,7 @@ export default defineComponent({
     display: none !important;
   }
   .icons {
+    position: fixed;
     display: block;
   }
 }
