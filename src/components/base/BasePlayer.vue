@@ -3,18 +3,19 @@
     <main class="player__main">
       <div class="flex justify-between padding">
         <p>SL</p>
-        <Icon v-if="soundOn" name="soundOn" @click="soundOn = false" />
-        <Icon v-else @click="soundOn = true" name="soundOff" />
+        <Icon v-if="!muteSound" name="soundOn" @click="mute" />
+        <Icon v-else @click="unMute" name="soundOff" />
       </div>
-      soundOff
-      <p>Quenye eye sounds</p>
+
+      <p>{{ this.current.title }}</p>
     </main>
     <footer class="player__footer">
-      <Icon name="leftAudio" />
+      <Icon @click="prev" name="leftAudio" />
 
-      <Icon name="pause" />
+      <Icon v-if="!isPlaying" @click="forceStart" name="play" />
+      <Icon v-else @click="pause" name="pause" />
 
-      <Icon name="rightArrow" />
+      <Icon @click="next" name="rightArrow" />
     </footer>
   </div>
 </template>
@@ -26,8 +27,85 @@ export default defineComponent({
   name: "BasePlayer",
   data() {
     return {
-      soundOn: true,
+      muteSound: false,
+      current: {
+        src: "",
+      },
+      index: 0,
+      isPlaying: false,
+      songs: [
+        {
+          title: "FIRST SONG",
+          artist: "Neffex",
+          src: require("@/assets/audio/audio-2.mp3"),
+        },
+        {
+          title: "Second SSONG",
+          artist: "Neffex",
+          src: require("@/assets/audio/audio-4.mp3"),
+        },
+        {
+          title: "Third Song",
+          artist: "Neffex",
+          src: require("@/assets/audio/ghost-3.mp3"),
+        },
+      ],
+      player: new Audio(),
     };
+  },
+  methods: {
+    play(song: any) {
+      if (typeof song.src != "undefined") {
+        this.current = song;
+        this.player.src = this.current.src;
+      }
+      this.player.play();
+      this.player.addEventListener("ended", () => {
+        this.index++;
+        if (this.index > this.songs.length - 1) {
+          this.index = 0;
+        }
+        this.current = this.songs[this.index];
+        this.play(this.current);
+      });
+      this.isPlaying = true;
+    },
+    forceStart() {
+      this.player.play();
+      this.isPlaying = true;
+    },
+    pause() {
+      this.player.pause();
+      this.isPlaying = false;
+    },
+    mute() {
+      this.player.muted = true;
+      this.muteSound = true;
+    },
+    unMute() {
+      this.player.muted = false;
+      this.muteSound = false;
+    },
+    next() {
+      this.index++;
+      if (this.index > this.songs.length - 1) {
+        this.index = 0;
+      }
+      this.current = this.songs[this.index];
+      this.play(this.current);
+    },
+    prev() {
+      this.index--;
+      if (this.index < 0) {
+        this.index = this.songs.length - 1;
+      }
+      this.current = this.songs[this.index];
+      this.play(this.current);
+    },
+  },
+  created() {
+    this.current = this.songs[this.index];
+    this.player.src = this.current.src;
   },
 });
 </script>
@@ -72,5 +150,13 @@ export default defineComponent({
   position: absolute;
   z-index: -1;
   border-radius: 25px;
+}
+
+@media (max-width: 900px) {
+  .player {
+    margin-top: toRem(50);
+    width: 250px;
+    height: 250px;
+  }
 }
 </style>

@@ -1,26 +1,28 @@
 <template>
-  <div class="mob-logo">
-    <img src="@/assets/logo.svg" alt="" />
-  </div>
-  <div class="icons">
-    <div v-if="!isNavOpen" @click="isNavOpen = true" class="icons__menu">
-      <Icon name="menu" />
+  <header>
+    <div class="mob-logo">
+      <img src="@/assets/logo.svg" alt="" />
+    </div>
+    <div class="icons">
+      <div v-if="!isNavOpen" @click="isNavOpen = true" class="icons__menu">
+        <Icon name="menu" />
+      </div>
+
+      <div v-if="isNavOpen" @click="isNavOpen = false" class="icons__close">
+        <Icon name="close" />
+      </div>
     </div>
 
-    <div v-if="isNavOpen" @click="isNavOpen = false" class="icons__close">
-      <Icon name="close" />
-    </div>
-  </div>
-
-  <nav :class="[isNavOpen ? 'show-item' : 'hidde-item']" class="navigation">
-    <ul class="navigation__list fade-in">
-      <li class="navigation__item">NEWS</li>
-      <li class="navigation__item">About Us</li>
-      <li class="navigation__item"><img src="@/assets/logo.svg" alt="" /></li>
-      <li class="navigation__item">about us</li>
-      <li class="navigation__item">TICKETS</li>
-    </ul>
-  </nav>
+    <nav :class="[isNavOpen ? 'show-item' : 'hidde-item']" class="navigation">
+      <ul class="navigation__list fade-in">
+        <li class="navigation__item">NEWS</li>
+        <li class="navigation__item">About Us</li>
+        <li class="navigation__item" style="font-size: 50px; color: red">SL</li>
+        <li class="navigation__item">about us</li>
+        <li class="navigation__item">TICKETS</li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <script lang="ts">

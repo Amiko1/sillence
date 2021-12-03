@@ -1,6 +1,7 @@
 <template>
-  <!-- <base-button> viewff </base-button> -->
-  <her-we-are> </her-we-are>
+  <main class="container">
+    <her-we-are> </her-we-are>
+  </main>
 </template>
 
 <script lang="ts">

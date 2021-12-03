@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="mt-md ml-md">
-        <base-button> explore </base-button>
+        <base-button class="here-we-are__button"> explore </base-button>
       </div>
     </div>
     <BasePlayer class="here-we-are__player" />
@@ -50,6 +50,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .here-we-are {
   display: flex;
+  align-items: center;
+
   justify-content: space-between;
   padding-top: toRem(150);
   .description {
@@ -65,7 +67,18 @@ export default defineComponent({
 
   &__player {
     position: relative;
-    bottom: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .here-we-are {
+    padding-top: toRem(30);
+    flex-direction: column;
+
+    &__button,
+    p {
+      text-align: center;
+    }
   }
 }
 </style>
