@@ -1,3 +1,21 @@
+@media (max-width: 1400px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 60%;
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -34,7 +52,7 @@ ol {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
@@ -46,8 +64,9 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Make images easier to work with */
@@ -82,23 +101,6 @@ select {
   }
 }
 
-@media (max-width: 1400px) {
-  html {
-    font-size: 80%;
-  }
-}
-
-@media (max-width: 1000px) {
-  html {
-    font-size: 70%;
-  }
-}
-
-// @media (max-width: 600px) {
-//   html {
-//     font-size: 60%;
-//   }
-// }
 /* background of the scrollbar except button or resizer */
 *::-webkit-scrollbar {
   background-color: #fff;

@@ -15,10 +15,12 @@
 
     <nav :class="[isNavOpen ? 'show-item' : 'hidde-item']" class="navigation">
       <ul class="navigation__list fade-in">
-        <li class="navigation__item">NEWS</li>
-        <li class="navigation__item">About Us</li>
+        <li class="navigation__item">HOME</li>
+        <li class="navigation__item">
+          <a href="#newsid"> NEWS </a>
+        </li>
         <li class="navigation__item" style="font-size: 50px; color: red">SL</li>
-        <li class="navigation__item">about us</li>
+        <li class="navigation__item">CONTACT</li>
         <li class="navigation__item">TICKETS</li>
       </ul>
     </nav>
@@ -48,6 +50,8 @@ export default defineComponent({
   z-index: 30;
 }
 .navigation {
+  position: fixed;
+  width: 100%;
   z-index: 20;
   padding-top: toRem(70);
   &__list {
@@ -60,7 +64,8 @@ export default defineComponent({
       top: toRem(-40);
     }
   }
-  &__item {
+  &__item,
+  a {
     @include headline5;
     cursor: pointer;
     &:hover {

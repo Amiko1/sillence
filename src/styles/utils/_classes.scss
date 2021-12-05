@@ -1,3 +1,7 @@
+/* ----------------
+layouts
+-------------------*/
+
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -40,32 +44,35 @@
   outline: 1px solid red;
 }
 
+/* ----------------
+SPACINGG
+-------------------*/
 .mt-sm {
   margin-top: 5px;
 }
 
 .mt-md {
-  margin-top: 15px;
+  margin-top: toRem(15);
 }
 
 .mt-lg {
-  margin-top: 25px;
+  margin-top: toRem(25);
 }
 
 .text-md {
-  font-size: 14px !important;
+  font-size: toRem(14) !important;
 }
 
 .text-sm {
-  font-size: 10px !important;
+  font-size: toRem(10) !important;
 }
 
 .ml-sm {
-  margin-left: 12px;
+  margin-left: toRem(125);
 }
 
 .padding {
-  padding: 2rem;
+  padding: toRem(32);
 }
 
 .icon {

@@ -1,23 +1,45 @@
 <template>
   <article class="card">
     <main>
-      <img src="../../assets/Nov23_Post2-1000x1000.jpeg" alt="" />
+      <img :src="require('@/assets/PlayerBackgrounds/' + imgPath)" alt="" />
     </main>
     <footer>
-      <h3>#pwrup the grammys</h3>
+      <h3>{{ data.txt }}</h3>
     </footer>
   </article>
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
 
+export default defineComponent({
+  props: {
+    data: {
+      type: Object,
+    },
+  },
+
+  // created() {
+  //   console.log(this.data?.src);
+
+  //   console.log(this.imgPath);
+  // },
+  computed: {
+    imgPath() {
+      let { src } = this.data;
+      return src || "232910.jpg";
+    },
+  },
+});
+</script>
 
 <style scoped lang="scss">
 .card {
   width: 100%;
-
   main {
     overflow: hidden;
     cursor: pointer;
+
     max-height: 500px;
   }
   footer {
@@ -27,6 +49,9 @@
     opacity: 0.7;
     color: $white;
     max-height: 300px;
+  }
+  img {
+    width: 100%;
   }
   &:hover {
     img {

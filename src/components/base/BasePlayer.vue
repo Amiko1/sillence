@@ -54,6 +54,7 @@ export default defineComponent({
     };
   },
   methods: {
+    /* eslint-disable */
     play(song: any) {
       if (typeof song.src != "undefined") {
         this.current = song;

@@ -51,9 +51,9 @@ export default defineComponent({
 .here-we-are {
   display: flex;
   align-items: center;
-
+  height: 100vh;
   justify-content: space-between;
-  padding-top: toRem(150);
+
   .description {
     max-width: 450px;
     line-height: 30px;
@@ -74,7 +74,7 @@ export default defineComponent({
   .here-we-are {
     padding-top: toRem(30);
     flex-direction: column;
-
+    justify-content: start;
     &__button,
     p {
       text-align: center;
